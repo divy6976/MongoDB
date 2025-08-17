@@ -425,8 +425,8 @@ if(!user){
 }
 
 user.password=password
-user.passwordResetToken=null;
-user.passwordResetExpiry=null;
+user.passwordResetToken=undefined;
+user.passwordResetExpiry=undefined;
 
 await user.save();
 
@@ -434,6 +434,8 @@ await user.save();
   message:"Passowrd reset succesfully",
   success:true
  })
+
+ 
 
 
 
