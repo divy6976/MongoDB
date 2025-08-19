@@ -31,7 +31,7 @@ const registerUser=async (req,res)=>{
               return  res.status(400).json({
                     message:"User already exist"
             
-                })
+                });
             }                                                                                 
           
    
@@ -42,6 +42,8 @@ const registerUser=async (req,res)=>{
                 password,
               });
               console.log(user);
+
+              
 
 
               //token generate
@@ -209,7 +211,7 @@ const login =async(req,res)=>{
       }
     );
      //1st paramter      //paylaod isme data dete hai usally id hi lete hai
-    // 2nd parameter- shhhh  ye scretert key process env me rkhte
+    // 2nd parameter- shhhh  ye secret key process env me rkhte
     //3rd paramteer: expires in ye bhi env me jana chiaye 
 
 
@@ -248,7 +250,7 @@ const login =async(req,res)=>{
 
 
 
-// jb koi logout krrha profile use krrha forogot kr rha toh dekhna opdega authenticate hoga ya nhi\
+// jb koi logout krrha profile use krrha forogot kr rha toh dekhna opdega authenticate hoga ya nhi
 
 
 
@@ -265,7 +267,7 @@ const getMe = async (req, res) => {
 
 //login krte time token ke andr kuch info dali thi
 //cookies se token niklunga 
-//token me se data niklunga
+//token me se data niklunga 
   try {
     const user = await User.findById(req.user.id).select("-password");
     console.log(user);
@@ -433,7 +435,9 @@ await user.save();
  res.status(200).json({
   message:"Passowrd reset succesfully",
   success:true
- })
+ });
+
+
 
  
 

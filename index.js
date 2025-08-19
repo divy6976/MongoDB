@@ -42,6 +42,10 @@ app.get('/divy',(req,res)=>{
 
 app.get("/hitesh",(req,res)=>{
     res.send('hi');
+
+           
+
+
 });
 
 // Connect to database

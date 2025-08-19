@@ -10,6 +10,7 @@ const userSchema=new mongoose.Schema({       //yaha pr structure bnaya
     role: {
         type: String,
         enum: ["user", "admin"],   // enum mtlb inmse se hi choose kro aur jabhi enum use tb default set kro
+                                         
         default: "user",
       },
     isVerified:{
@@ -26,6 +27,7 @@ type:String
         type:Date
     }
 
+    
 
 
 
@@ -47,6 +49,15 @@ userSchema.pre("save",async function(next){
 const User=mongoose.model("User",userSchema);    //yaha pr structure ko databse me dala
 
 export  default User;
+
+
+//get email pass
+//check email exist or not
+// if exist then check passs
+//if matched generate session token thorugh jwt
+// send to db
+// send to user cookies 
+//suceess message
 
 
 
